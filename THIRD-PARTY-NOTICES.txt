@@ -5,6 +5,8 @@ zmermaid's project license is EPL-2.0 (LICENSE). This does not remove the
 applicable notices or rights of upstream material. No secondary-license
 option is declared for the project.
 
+Original zmermaid contributions: Copyright (c) 2026 Vladimir Vasiltsov.
+
 Eclipse Layout Kernel (ELK) 0.10.0
 --------------------------------
 Project: https://github.com/eclipse-elk/elk

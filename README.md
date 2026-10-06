@@ -35,6 +35,14 @@ Generated outputs live in `zig-out/` and are not committed. Binary distributions
 must include the license, upstream notices and an accessible matching source
 version.
 
+## Downloads
+
+GitHub builds and runs the native unit tests on each push to `master`. Tags such
+as `v0.1.0` also publish a [release](https://github.com/t90/zmermaid/releases).
+Each release includes the raw WASM module, a gzip-compressed module, SHA-256
+checksums and a bundle with browser loaders, API documentation and license
+notices. `SOURCE.txt` identifies the exact matching source commit.
+
 ## C API
 
 Save this as `example.c`. Link it against the native library built in `zig-out/lib/`.
@@ -114,6 +122,8 @@ See the [API reference](doc/index.md). The JavaScript modules run in browsers;
 they do not require Node.js.
 
 ## License and acknowledgments
+
+Copyright (c) 2026 Vladimir Vasiltsov, for original zmermaid contributions.
 
 zmermaid is distributed under **EPL-2.0**, with no secondary-license option
 declared. See [LICENSE](LICENSE).

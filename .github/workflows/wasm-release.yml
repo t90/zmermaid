@@ -1,0 +1,111 @@
+name: Build WASM and release
+
+on:
+  push:
+    branches: [master]
+    tags: ['v[0-9]*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build and test with Zig 0.16.0
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install verified Zig toolchain
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="$RUNNER_TEMP/zig-0.16.0.tar.xz"
+          curl --fail --location --retry 3 \
+            https://ziglang.org/download/0.16.0/zig-x86_64-linux-0.16.0.tar.xz \
+            --output "$archive"
+          printf '%s  %s\n' \
+            70e49664a74374b48b51e6f3fdfbf437f6395d42509050588bd49abe52ba3d00 \
+            "$archive" | sha256sum --check
+          tar -xJf "$archive" -C "$RUNNER_TEMP"
+          "$RUNNER_TEMP/zig-x86_64-linux-0.16.0/zig" version
+          rm -- "$archive"
+          printf '%s\n' "$RUNNER_TEMP/zig-x86_64-linux-0.16.0" >> "$GITHUB_PATH"
+
+      - name: Build WASM and run native tests
+        run: zig build -Doptimize=ReleaseSmall --summary all
+
+      - name: Prepare distribution
+        shell: bash
+        run: |
+          set -euo pipefail
+          magic=$(od -An -tx1 -N8 zig-out/zmermaid.wasm | tr -d ' \n')
+          test "$magic" = 0061736d01000000
+          mkdir -p release bundle
+          cp zig-out/zmermaid.wasm release/zmermaid.wasm
+          gzip -n -9 -c release/zmermaid.wasm > release/zmermaid.wasm.gz
+          printf 'Repository: https://github.com/%s\nCommit: %s\nSource: https://github.com/%s/tree/%s\n' \
+            "$GITHUB_REPOSITORY" "$GITHUB_SHA" "$GITHUB_REPOSITORY" "$GITHUB_SHA" \
+            > release/SOURCE.txt
+          cp release/zmermaid.wasm release/zmermaid.wasm.gz release/SOURCE.txt bundle/
+          cp LICENSE THIRD-PARTY-NOTICES.txt THANKS.txt PROVENANCE.json README.md bundle/
+          cp -R LICENSES web doc include bundle/
+          cp LICENSE THIRD-PARTY-NOTICES.txt release/
+          tar -czf release/zmermaid-wasm-bundle.tar.gz -C bundle .
+          (cd release && sha256sum zmermaid.wasm zmermaid.wasm.gz \
+            zmermaid-wasm-bundle.tar.gz SOURCE.txt LICENSE THIRD-PARTY-NOTICES.txt \
+            > SHA256SUMS)
+
+      - name: Save WASM distribution
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: zmermaid-wasm
+          path: release/
+          if-no-files-found: error
+          retention-days: 30
+
+  release:
+    name: Publish tagged WASM release
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - name: Download tested distribution
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RUN_ID: ${{ github.run_id }}
+        run: gh run download "$RUN_ID" --name zmermaid-wasm --dir release
+
+      - name: Verify distribution checksums
+        working-directory: release
+        run: sha256sum --check SHA256SUMS
+
+      - name: Create experimental release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TAG_NAME: ${{ github.ref_name }}
+          SOURCE_COMMIT: ${{ github.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          notes="Experimental zmermaid WASM release built and tested by GitHub Actions with Zig 0.16.0.
+
+          Matching source: https://github.com/$GH_REPO/tree/$SOURCE_COMMIT
+
+          Download zmermaid-wasm-bundle.tar.gz for the module, browser loaders, API documentation and complete license notices. Standalone zmermaid.wasm and zmermaid.wasm.gz are also provided. Verify downloads against SHA256SUMS. This is a partial Mermaid-compatible implementation; see README for limitations."
+          if gh release view "$TAG_NAME" > /dev/null 2>&1; then
+            gh release upload "$TAG_NAME" release/* --clobber
+          else
+            gh release create "$TAG_NAME" release/* --verify-tag \
+              --title "zmermaid $TAG_NAME" --notes "$notes" --prerelease
+          fi
