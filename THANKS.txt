@@ -1,0 +1,47 @@
+Acknowledgments
+===============
+
+Thanks to the Mermaid, Eclipse Layout Kernel and RoughJS communities.
+Their work informed syntax compatibility, text/shape measurement and layered
+graph mechanics. Upstream copyright notices are preserved separately.
+
+The names below come from Git blame on the pinned referenced source files.
+This is a partial record from the available upstream history, not a complete
+contributor list and not a claim these people authored zmermaid.
+Blame does not establish copyright ownership. Bot accounts and emails are omitted.
+
+Mermaid referenced-file contributors:
+  Aakansha Doshi
+  Alois Klink
+  Ashish Jain
+  Hans Blankenhaus
+  Jakob
+  Josh Soref
+  Knut Sveidqvist
+  Remco Haszing
+  Saurabh Gore
+  Sidharth Vinod
+  Subhash Halder
+  Yash Singh
+  darshanr0107
+  jakobskrym
+  mikejeffers
+  omkarht
+  saurabhg772244
+
+ELK referenced-file contributors:
+  Christoph Daniel Schulze
+  Laurent Redor
+  Soeren Domroes
+  Sören Domrös
+  Ulf Rüegg
+
+RoughJS: Preet Shihn and the RoughJS contributors.
+Mermaid copyright holder: Knut Sveidqvist.
+ELK copyright holders: Kiel University and others; file-specific notices are
+recorded in PROVENANCE.json and the corresponding zmermaid source headers.
+
+Projects:
+  https://github.com/mermaid-js/mermaid
+  https://github.com/eclipse-elk/elk
+  https://github.com/rough-stuff/rough

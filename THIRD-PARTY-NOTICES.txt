@@ -1,0 +1,59 @@
+Third-party notices and implementation references
+================================================
+
+zmermaid's project license is EPL-2.0 (LICENSE). This does not remove the
+applicable notices or rights of upstream material. No secondary-license
+option is declared for the project.
+
+Eclipse Layout Kernel (ELK) 0.10.0
+--------------------------------
+Project: https://github.com/eclipse-elk/elk
+Reference revision: 30035c605c0d45467f673f7b6b263d44dc2632da
+License: LICENSES/ELK-EPL-2.0.txt (unmodified upstream text).
+Copyright holders include Kiel University and others. File-specific original
+copyright notices are retained in source headers and PROVENANCE.json.
+The source-guided layout mechanics are conservatively distributed under EPL-2.0.
+This records provenance and licensing policy, not a legal finding that every
+algorithm reference constitutes a copyright derivative work.
+The corresponding source is supplied in this repository. Binary distributors
+must provide recipients access to the matching source under EPL-2.0 and must
+preserve the license and notices; include a source version/link in each release.
+
+Mermaid and RoughJS
+------------------
+Mermaid: https://github.com/mermaid-js/mermaid
+Measurement reference: 11.16.1, revision
+7ecca0cd7f1658ef74f4e7e91f925724ef403bbf.
+Original license: LICENSES/Mermaid-MIT.txt.
+
+RoughJS: https://github.com/rough-stuff/rough
+Ellipse-measurement reference: published package roughjs 4.6.6.
+Original license: LICENSES/RoughJS-MIT.txt, copied from that published package.
+RoughJS JavaScript is not bundled as a runtime dependency.
+
+The SVG text adapter and native shape measurement implement algorithms adapted
+from Mermaid 11.16.1 and RoughJS 4.6.6. These projects are MIT licensed.
+
+Mermaid: Copyright (c) 2014 - 2022 Knut Sveidqvist
+
+RoughJS: Copyright (c) 2019 Preet Shihn
+
+The following MIT notice is retained for the respective upstream material:
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

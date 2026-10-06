@@ -1,0 +1,330 @@
+{
+  "schema": 1,
+  "note": "Implementation references and conservative notice retention; not a legal determination of derivative status. Git blame records attribution for referenced lines, not authorship of zmermaid.",
+  "files": [
+    {
+      "file": "src/flow_barycenter.zig",
+      "project": "ELK",
+      "revision": "30035c605c0d45467f673f7b6b263d44dc2632da",
+      "relationship": "source-guided mechanics; conservatively distributed under EPL-2.0",
+      "upstream": [
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/p3order/BarycenterHeuristic.java"
+      ],
+      "license": "LICENSES/ELK-EPL-2.0.txt",
+      "copyright": [
+        "Copyright (c) 2010, 2015 Kiel University and others."
+      ]
+    },
+    {
+      "file": "src/flow_bk.zig",
+      "project": "ELK",
+      "revision": "30035c605c0d45467f673f7b6b263d44dc2632da",
+      "relationship": "source-guided mechanics; conservatively distributed under EPL-2.0",
+      "upstream": [
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/p4nodes/bk/BKAligner.java",
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/p4nodes/bk/BKNodePlacer.java"
+      ],
+      "license": "LICENSES/ELK-EPL-2.0.txt",
+      "copyright": [
+        "Copyright (c) 2015 Kiel University and others.",
+        "Copyright (c) 2012, 2015 Kiel University and others."
+      ]
+    },
+    {
+      "file": "src/flow_compaction.zig",
+      "project": "ELK",
+      "revision": "30035c605c0d45467f673f7b6b263d44dc2632da",
+      "relationship": "source-guided mechanics; conservatively distributed under EPL-2.0",
+      "upstream": [
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/p4nodes/bk/BKCompactor.java"
+      ],
+      "license": "LICENSES/ELK-EPL-2.0.txt",
+      "copyright": [
+        "Copyright (c) 2015 Kiel University and others."
+      ]
+    },
+    {
+      "file": "src/flow_selection.zig",
+      "project": "ELK",
+      "revision": "30035c605c0d45467f673f7b6b263d44dc2632da",
+      "relationship": "source-guided mechanics; conservatively distributed under EPL-2.0",
+      "upstream": [
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/p4nodes/bk/BKNodePlacer.java"
+      ],
+      "license": "LICENSES/ELK-EPL-2.0.txt",
+      "copyright": [
+        "Copyright (c) 2012, 2015 Kiel University and others."
+      ]
+    },
+    {
+      "file": "src/flow_rank.zig",
+      "project": "ELK",
+      "revision": "30035c605c0d45467f673f7b6b263d44dc2632da",
+      "relationship": "source-guided mechanics; conservatively distributed under EPL-2.0",
+      "upstream": [
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/p1cycles/GreedyCycleBreaker.java",
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/p2layers/NetworkSimplexLayerer.java"
+      ],
+      "license": "LICENSES/ELK-EPL-2.0.txt",
+      "copyright": [
+        "Copyright (c) 2010, 2015 Kiel University and others.",
+        "Copyright (c) 2010, 2020 Kiel University and others."
+      ]
+    },
+    {
+      "file": "src/flow_simplex.zig",
+      "project": "ELK",
+      "revision": "30035c605c0d45467f673f7b6b263d44dc2632da",
+      "relationship": "source-guided mechanics; conservatively distributed under EPL-2.0",
+      "upstream": [
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/p2layers/NetworkSimplexLayerer.java"
+      ],
+      "license": "LICENSES/ELK-EPL-2.0.txt",
+      "copyright": [
+        "Copyright (c) 2010, 2020 Kiel University and others."
+      ]
+    },
+    {
+      "file": "src/flow_layout.zig",
+      "project": "ELK",
+      "revision": "30035c605c0d45467f673f7b6b263d44dc2632da",
+      "relationship": "source-guided mechanics; conservatively distributed under EPL-2.0",
+      "upstream": [
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/p3order/LayerSweepCrossingMinimizer.java",
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/p3order/NodeRelativePortDistributor.java",
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/p3order/LayerTotalPortDistributor.java",
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/intermediate/LongEdgeSplitter.java"
+      ],
+      "license": "LICENSES/ELK-EPL-2.0.txt",
+      "copyright": [
+        "Copyright (c) 2010, 2015 Kiel University and others.",
+        "Copyright (c) 2012, 2015 Kiel University and others."
+      ]
+    },
+    {
+      "file": "src/flow_inverted_ports.zig",
+      "project": "ELK",
+      "revision": "30035c605c0d45467f673f7b6b263d44dc2632da",
+      "relationship": "source-guided mechanics; conservatively distributed under EPL-2.0",
+      "upstream": [
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/intermediate/InvertedPortProcessor.java"
+      ],
+      "license": "LICENSES/ELK-EPL-2.0.txt",
+      "copyright": [
+        "Copyright (c) 2011, 2019 Kiel University and others."
+      ]
+    },
+    {
+      "file": "src/flow_inlayer_crossings.zig",
+      "project": "ELK",
+      "revision": "30035c605c0d45467f673f7b6b263d44dc2632da",
+      "relationship": "source-guided mechanics; conservatively distributed under EPL-2.0",
+      "upstream": [
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/p3order/counting/CrossingsCounter.java"
+      ],
+      "license": "LICENSES/ELK-EPL-2.0.txt",
+      "copyright": [
+        "Copyright (c) 2016, 2018 Kiel University and others."
+      ]
+    },
+    {
+      "file": "src/flow_port_graph.zig",
+      "project": "ELK",
+      "revision": "30035c605c0d45467f673f7b6b263d44dc2632da",
+      "relationship": "source-guided mechanics; conservatively distributed under EPL-2.0",
+      "upstream": [
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/p4nodes/bk/BKNodePlacer.java"
+      ],
+      "license": "LICENSES/ELK-EPL-2.0.txt",
+      "copyright": [
+        "Copyright (c) 2012, 2015 Kiel University and others."
+      ]
+    },
+    {
+      "file": "src/flow_preparation.zig",
+      "project": "ELK",
+      "revision": "30035c605c0d45467f673f7b6b263d44dc2632da",
+      "relationship": "source-guided mechanics; conservatively distributed under EPL-2.0",
+      "upstream": [
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/intermediate/LabelSideSelector.java",
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/intermediate/LabelAndNodeSizeProcessor.java"
+      ],
+      "license": "LICENSES/ELK-EPL-2.0.txt",
+      "copyright": [
+        "Copyright (c) 2012, 2017 Kiel University and others.",
+        "Copyright (c) 2010, 2020 Kiel University and others."
+      ]
+    },
+    {
+      "file": "src/flow_margins.zig",
+      "project": "ELK",
+      "revision": "30035c605c0d45467f673f7b6b263d44dc2632da",
+      "relationship": "source-guided mechanics; conservatively distributed under EPL-2.0",
+      "upstream": [
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/intermediate/InnermostNodeMarginCalculator.java"
+      ],
+      "license": "LICENSES/ELK-EPL-2.0.txt",
+      "copyright": [
+        "Copyright (c) 2010, 2019 Kiel University and others."
+      ]
+    },
+    {
+      "file": "src/flow_orthogonal.zig",
+      "project": "ELK",
+      "revision": "30035c605c0d45467f673f7b6b263d44dc2632da",
+      "relationship": "source-guided mechanics; conservatively distributed under EPL-2.0",
+      "upstream": [
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/p5edges/orthogonal/OrthogonalRoutingGenerator.java"
+      ],
+      "license": "LICENSES/ELK-EPL-2.0.txt",
+      "copyright": [
+        "Copyright (c) 2010, 2020 Kiel University and others."
+      ]
+    },
+    {
+      "file": "src/flow_scene.zig",
+      "project": "ELK",
+      "revision": "30035c605c0d45467f673f7b6b263d44dc2632da",
+      "relationship": "source-guided mechanics; conservatively distributed under EPL-2.0",
+      "upstream": [
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/intermediate/LongEdgeJoiner.java",
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/intermediate/LabelDummyRemover.java"
+      ],
+      "license": "LICENSES/ELK-EPL-2.0.txt",
+      "copyright": [
+        "Copyright (c) 2010, 2015 Kiel University and others.",
+        "Copyright (c) 2012, 2020 Kiel University and others."
+      ]
+    },
+    {
+      "file": "src/flow_hierarchy.zig",
+      "project": "ELK",
+      "revision": "30035c605c0d45467f673f7b6b263d44dc2632da",
+      "relationship": "source-guided mechanics; conservatively distributed under EPL-2.0",
+      "upstream": [
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/compound/CompoundGraphPreprocessor.java"
+      ],
+      "license": "LICENSES/ELK-EPL-2.0.txt",
+      "copyright": [
+        "Copyright (c) 2013, 2020 Kiel University and others."
+      ]
+    },
+    {
+      "file": "src/flow_measured_boundary.zig",
+      "project": "ELK",
+      "revision": "30035c605c0d45467f673f7b6b263d44dc2632da",
+      "relationship": "source-guided mechanics; conservatively distributed under EPL-2.0",
+      "upstream": [
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/compound/CompoundGraphPreprocessor.java",
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/intermediate/InvertedPortProcessor.java"
+      ],
+      "license": "LICENSES/ELK-EPL-2.0.txt",
+      "copyright": [
+        "Copyright (c) 2013, 2020 Kiel University and others.",
+        "Copyright (c) 2011, 2019 Kiel University and others."
+      ]
+    },
+    {
+      "file": "src/flow_measured_compound.zig",
+      "project": "ELK",
+      "revision": "30035c605c0d45467f673f7b6b263d44dc2632da",
+      "relationship": "source-guided mechanics; conservatively distributed under EPL-2.0",
+      "upstream": [
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/compound/CompoundGraphPreprocessor.java"
+      ],
+      "license": "LICENSES/ELK-EPL-2.0.txt",
+      "copyright": [
+        "Copyright (c) 2013, 2020 Kiel University and others."
+      ]
+    },
+    {
+      "file": "src/flow_measured_layout.zig",
+      "project": "ELK",
+      "revision": "30035c605c0d45467f673f7b6b263d44dc2632da",
+      "relationship": "source-guided mechanics; conservatively distributed under EPL-2.0",
+      "upstream": [
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/p4nodes/bk/BKNodePlacer.java",
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/intermediate/LabelAndNodeSizeProcessor.java"
+      ],
+      "license": "LICENSES/ELK-EPL-2.0.txt",
+      "copyright": [
+        "Copyright (c) 2012, 2015 Kiel University and others.",
+        "Copyright (c) 2010, 2020 Kiel University and others."
+      ]
+    },
+    {
+      "file": "src/flow_self_loops.zig",
+      "project": "ELK",
+      "revision": "30035c605c0d45467f673f7b6b263d44dc2632da",
+      "relationship": "source-guided mechanics; conservatively distributed under EPL-2.0",
+      "upstream": [
+        "https://github.com/eclipse-elk/elk/blob/30035c605c0d45467f673f7b6b263d44dc2632da/plugins/org.eclipse.elk.alg.layered/src/org/eclipse/elk/alg/layered/intermediate/LabelAndNodeSizeProcessor.java"
+      ],
+      "license": "LICENSES/ELK-EPL-2.0.txt",
+      "copyright": [
+        "Copyright (c) 2010, 2020 Kiel University and others."
+      ]
+    },
+    {
+      "file": "src/flow_measurement.zig",
+      "project": "Mermaid",
+      "revision": "7ecca0cd7f1658ef74f4e7e91f925724ef403bbf",
+      "relationship": "measurement adaptation",
+      "upstream": [
+        "https://github.com/mermaid-js/mermaid/blob/7ecca0cd7f1658ef74f4e7e91f925724ef403bbf/packages/mermaid/src/rendering-util/rendering-elements/shapes/"
+      ],
+      "license": "LICENSES/Mermaid-MIT.txt"
+    },
+    {
+      "file": "web/text-measurement.mjs",
+      "project": "Mermaid",
+      "revision": "7ecca0cd7f1658ef74f4e7e91f925724ef403bbf",
+      "relationship": "measurement adaptation",
+      "upstream": [
+        "https://github.com/mermaid-js/mermaid/blob/7ecca0cd7f1658ef74f4e7e91f925724ef403bbf/packages/mermaid/src/rendering-util/createText.ts",
+        "https://github.com/mermaid-js/mermaid/blob/7ecca0cd7f1658ef74f4e7e91f925724ef403bbf/packages/mermaid/src/rendering-util/splitText.ts"
+      ],
+      "license": "LICENSES/Mermaid-MIT.txt"
+    },
+    {
+      "file": "src/flow_shapes.zig",
+      "project": "Mermaid",
+      "revision": "7ecca0cd7f1658ef74f4e7e91f925724ef403bbf",
+      "relationship": "syntax/shape reference",
+      "upstream": [
+        "https://github.com/mermaid-js/mermaid/blob/7ecca0cd7f1658ef74f4e7e91f925724ef403bbf/packages/mermaid/src/rendering-util/rendering-elements/shapes/"
+      ],
+      "license": "LICENSES/Mermaid-MIT.txt"
+    },
+    {
+      "file": "src/flowchart.zig",
+      "project": "Mermaid",
+      "revision": "7ecca0cd7f1658ef74f4e7e91f925724ef403bbf",
+      "relationship": "syntax/shape reference",
+      "upstream": [
+        "https://github.com/mermaid-js/mermaid/blob/7ecca0cd7f1658ef74f4e7e91f925724ef403bbf/packages/mermaid/src/diagrams/flowchart/"
+      ],
+      "license": "LICENSES/Mermaid-MIT.txt"
+    },
+    {
+      "file": "src/state.zig",
+      "project": "Mermaid",
+      "revision": "7ecca0cd7f1658ef74f4e7e91f925724ef403bbf",
+      "relationship": "syntax/shape reference",
+      "upstream": [
+        "https://github.com/mermaid-js/mermaid/blob/7ecca0cd7f1658ef74f4e7e91f925724ef403bbf/packages/mermaid/src/diagrams/state/"
+      ],
+      "license": "LICENSES/Mermaid-MIT.txt"
+    },
+    {
+      "file": "src/flow_measurement.zig",
+      "project": "RoughJS",
+      "version": "4.6.6",
+      "relationship": "ellipse measurement adaptation",
+      "upstream": [
+        "https://www.npmjs.com/package/roughjs/v/4.6.6"
+      ],
+      "license": "LICENSES/RoughJS-MIT.txt"
+    }
+  ]
+}
