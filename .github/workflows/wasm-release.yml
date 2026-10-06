@@ -1,6 +1,8 @@
 name: Build WASM and release
 
 on:
+  pull_request:
+    branches: [master]
   push:
     branches: [master]
     tags: ['v[0-9]*']
