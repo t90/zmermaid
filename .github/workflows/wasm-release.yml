@@ -39,6 +39,12 @@ jobs:
       - name: Build WASM and run native tests
         run: zig build -Doptimize=ReleaseSmall --summary all
 
+      - name: Install 7-Zip for maximum gzip compression
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes 7zip
+          7zz | head -n 4
+
       - name: Prepare distribution
         shell: bash
         run: |
@@ -47,7 +53,21 @@ jobs:
           test "$magic" = 0061736d01000000
           mkdir -p release bundle
           cp zig-out/zmermaid.wasm release/zmermaid.wasm
-          gzip -n -9 -c release/zmermaid.wasm > release/zmermaid.wasm.gz
+          7zz a "$RUNNER_TEMP/zmermaid.gz" -tgzip -so -si -mx=9 \
+            < release/zmermaid.wasm > release/zmermaid.wasm.gz
+          # Match the earlier packager: stream input, maximum gzip level and
+          # a zero timestamp. The browser loader expects gzip, not a .7z file.
+          python3 - <<'PY'
+          from pathlib import Path
+          import gzip
+          packed_path = Path('release/zmermaid.wasm.gz')
+          packed = bytearray(packed_path.read_bytes())
+          assert packed[:4] == b'\x1f\x8b\x08\x00', 'Unexpected 7-Zip gzip header'
+          packed[4:8] = b'\x00' * 4
+          assert gzip.decompress(packed) == Path('release/zmermaid.wasm').read_bytes()
+          packed_path.write_bytes(packed)
+          print(f'7-Zip gzip: {len(packed)} bytes; exact WASM round trip verified')
+          PY
           printf 'Repository: https://github.com/%s\nCommit: %s\nSource: https://github.com/%s/tree/%s\n' \
             "$GITHUB_REPOSITORY" "$GITHUB_SHA" "$GITHUB_REPOSITORY" "$GITHUB_SHA" \
             > release/SOURCE.txt
@@ -98,7 +118,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          notes="Experimental zmermaid WASM release built and tested by GitHub Actions with Zig 0.16.0.
+          notes="Experimental zmermaid WASM release built and tested by GitHub Actions with Zig 0.16.0. The WASM gzip asset uses 7-Zip -tgzip -mx=9, with its timestamp cleared and a verified byte-identical decompression round trip.
 
           Matching source: https://github.com/$GH_REPO/tree/$SOURCE_COMMIT
 

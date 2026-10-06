@@ -42,6 +42,9 @@ as `v0.1.0` also publish a [release](https://github.com/t90/zmermaid/releases).
 Each release includes the raw WASM module, a gzip-compressed module, SHA-256
 checksums and a bundle with browser loaders, API documentation and license
 notices. `SOURCE.txt` identifies the exact matching source commit.
+The WASM gzip asset is compressed with 7-Zip (`-tgzip -mx=9`), has its timestamp
+cleared and is checked against the uncompressed module. Consumers do not need
+7-Zip; this is a standard gzip stream accepted by the browser loader.
 
 ## C API
 
