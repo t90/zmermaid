@@ -40,10 +40,20 @@ jobs:
         run: zig build -Doptimize=ReleaseSmall --summary all
 
       - name: Install 7-Zip for maximum gzip compression
+        shell: bash
         run: |
+          set -euo pipefail
           sudo apt-get update
           sudo apt-get install --yes 7zip
-          7zz | head -n 4
+          for candidate in 7zz 7z 7zip; do
+            if command -v "$candidate" > /dev/null 2>&1; then
+              printf 'SEVENZIP=%s\n' "$(command -v "$candidate")" >> "$GITHUB_ENV"
+              "$candidate" i
+              exit 0
+            fi
+          done
+          printf 'No 7-Zip executable found after installation\n' >&2
+          exit 1
 
       - name: Prepare distribution
         shell: bash
@@ -53,7 +63,7 @@ jobs:
           test "$magic" = 0061736d01000000
           mkdir -p release bundle
           cp zig-out/zmermaid.wasm release/zmermaid.wasm
-          7zz a "$RUNNER_TEMP/zmermaid.gz" -tgzip -so -si -mx=9 \
+          "$SEVENZIP" a "$RUNNER_TEMP/zmermaid.gz" -tgzip -so -si -mx=9 \
             < release/zmermaid.wasm > release/zmermaid.wasm.gz
           # Match the earlier packager: stream input, maximum gzip level and
           # a zero timestamp. The browser loader expects gzip, not a .7z file.
